@@ -22,6 +22,9 @@ For example
 psql -h localhost -d sampledb -U baz -W < restore.sql
 ```
 
+The changes to the restore.sql before it works:
+* put absolute paths for all the .dat files
+* change `DROP SCHEMA public` to `DROP SCHEMA public CASCADE`
 
 ### Installing
 
@@ -94,4 +97,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
