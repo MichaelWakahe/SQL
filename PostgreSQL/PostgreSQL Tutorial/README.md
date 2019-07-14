@@ -1,12 +1,15 @@
 # Project Title
 
-These are SQL samples on PostgreSQL v9.6. They are derived from [PostgreSQL Tutorial](http://www.postgresqltutorial.com)
+These are SQL samples tested on PostgreSQL 11.4. They are derived from [PostgreSQL Tutorial](http://www.postgresqltutorial.com)
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+
+Ensure that you have [Docker](https://www.docker.com) installed on your local machine.
+
 
 You need to load up the [sample database](http://www.postgresqltutorial.com/postgresql-sample-database) offered in
 PostgreSQL Tutorial.
@@ -84,16 +87,14 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **[Michael Wakahe](http://www.michaelwakahe.com)** - *Initial image setup*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
-* Inspiration
-* etc
