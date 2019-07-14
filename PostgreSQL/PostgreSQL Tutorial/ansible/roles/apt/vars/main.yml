@@ -1,0 +1,6 @@
+---
+
+apt_packages:
+  - postgresql-server-dev-11
+  - python-setuptools
+  - python-psycopg2

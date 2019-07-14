@@ -3,4 +3,6 @@
 - hosts: db-server  
   remote_user: michael
   roles:
+    - {role: apt, tags: [apt], become: true}
+    - {role: python-pip, tags: [pip], become: true}
     - {role: postgresql, tags: [database], become: true}

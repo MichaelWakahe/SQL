@@ -1,0 +1,11 @@
+---
+
+- name: Installing required packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - aptitude
+      - python-apt
+      - python-pycurl

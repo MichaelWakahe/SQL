@@ -1,0 +1,7 @@
+---
+pip_install_packages:
+  - name: pip
+    state: latest
+  - name: setuptools
+  - name: psycopg2-binary
+  - name: psycopg2

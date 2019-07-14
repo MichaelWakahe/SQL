@@ -69,6 +69,11 @@ Copy the host machine public key 'id_rsa.pub' to the ssh file '~/.ssh/authorized
 
 You can then log in passwordlessly from the host using the IP address above. Port 5432 for Postgres is also available using this IP.
 
+Modify your host Ansible settings as follows: add these lines to /etc/ansible/ansible.cfg:
+
+    allow_world_readable_tmpfiles = True
+    pipelining = True
+
 Run the Ansible playbook against the Docker container:
 
     cd ansible

@@ -2,8 +2,15 @@
 postgresql_version: 11
 
 # Enable postgis
+postgresql_ext_postgis_deps:
+  - libgeos-c1v5
+  - "postgresql-{{ postgresql_version }}-postgis-{{ postgresql_ext_postgis_version }}"
+  - "postgresql-{{ postgresql_version }}-postgis-{{ postgresql_ext_postgis_version }}-scripts"
+
 postgresql_ext_install_postgis: yes
-postgresql_ext_postgis_version: "2.4"
+postgresql_ext_postgis_version: "2.5"
+
+#postgresql_admin_password: mypass
 
 postgresql_users:
   - name: baz
