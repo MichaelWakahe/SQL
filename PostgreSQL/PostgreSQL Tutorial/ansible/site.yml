@@ -1,0 +1,6 @@
+---
+
+- hosts: db-server  
+  remote_user: michael
+  roles:
+    - {role: postgresql, tags: [database], become: true}

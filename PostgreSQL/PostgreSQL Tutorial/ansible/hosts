@@ -1,0 +1,2 @@
+[db-server]
+172.18.0.2 ansible_sudo_pass=foobar
