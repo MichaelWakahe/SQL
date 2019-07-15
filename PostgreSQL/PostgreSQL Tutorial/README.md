@@ -84,13 +84,15 @@ PostgreSQL Tutorial.
 
 Example to load up the sample database in *nix:
 
+Unpack the contents of dvdrental/dat.zip into /tmp. The files here are referred to in restore.sql; you can edit this SQL file with the relative location of the .dat files.
+
 ```
 psql -h HOST -d YOUR_DATABASE_NAME -U USERNAME -W < file.sql
 ```
 
 For example
 ```
-psql -h localhost -d sampledb -U baz -W < restore.sql
+psql -h 172.18.0.2 -d sampledb -U baz -W < restore.sql
 ```
 
 The changes to the restore.sql before it works:

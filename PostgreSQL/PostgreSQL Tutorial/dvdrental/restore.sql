@@ -948,9 +948,7 @@ ALTER TABLE myschema.staff_list OWNER TO postgres;
 -- Data for Name: actor; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY actor (actor_id, first_name, last_name, last_update) FROM stdin;
-\.
-COPY actor (actor_id, first_name, last_name, last_update) FROM '/tmp/2163.dat';
+\COPY actor (actor_id, first_name, last_name, last_update) FROM '/tmp/2163.dat';
 
 --
 -- Name: actor_actor_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -963,9 +961,7 @@ SELECT pg_catalog.setval('actor_actor_id_seq', 200, true);
 -- Data for Name: address; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY address (address_id, address, address2, district, city_id, postal_code, phone, last_update) FROM stdin;
-\.
-COPY address (address_id, address, address2, district, city_id, postal_code, phone, last_update) FROM '/tmp/2171.dat';
+\COPY address (address_id, address, address2, district, city_id, postal_code, phone, last_update) FROM '/tmp/2171.dat';
 
 --
 -- Name: address_address_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -978,9 +974,7 @@ SELECT pg_catalog.setval('address_address_id_seq', 605, true);
 -- Data for Name: category; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY category (category_id, name, last_update) FROM stdin;
-\.
-COPY category (category_id, name, last_update) FROM '/tmp/2165.dat';
+\COPY category (category_id, name, last_update) FROM '/tmp/2165.dat';
 
 --
 -- Name: category_category_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -993,9 +987,7 @@ SELECT pg_catalog.setval('category_category_id_seq', 16, true);
 -- Data for Name: city; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY city (city_id, city, country_id, last_update) FROM stdin;
-\.
-COPY city (city_id, city, country_id, last_update) FROM '/tmp/2173.dat';
+\COPY city (city_id, city, country_id, last_update) FROM '/tmp/2173.dat';
 
 --
 -- Name: city_city_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1008,9 +1000,7 @@ SELECT pg_catalog.setval('city_city_id_seq', 600, true);
 -- Data for Name: country; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY country (country_id, country, last_update) FROM stdin;
-\.
-COPY country (country_id, country, last_update) FROM '/tmp/2175.dat';
+\COPY country (country_id, country, last_update) FROM '/tmp/2175.dat';
 
 --
 -- Name: country_country_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1023,9 +1013,7 @@ SELECT pg_catalog.setval('country_country_id_seq', 109, true);
 -- Data for Name: customer; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY customer (customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active) FROM stdin;
-\.
-COPY customer (customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active) FROM '/tmp/2177.dat';
+\COPY customer (customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active) FROM '/tmp/2177.dat';
 
 --
 -- Name: customer_customer_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1038,25 +1026,19 @@ SELECT pg_catalog.setval('customer_customer_id_seq', 599, true);
 -- Data for Name: film; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY film (film_id, title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, last_update, special_features, fulltext) FROM stdin;
-\.
-COPY film (film_id, title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, last_update, special_features, fulltext) FROM '/tmp/2167.dat';
+\COPY film (film_id, title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, last_update, special_features, fulltext) FROM '/tmp/2167.dat';
 
 --
 -- Data for Name: film_actor; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY film_actor (actor_id, film_id, last_update) FROM stdin;
-\.
-COPY film_actor (actor_id, film_id, last_update) FROM '/tmp/2168.dat';
+\COPY film_actor (actor_id, film_id, last_update) FROM '/tmp/2168.dat';
 
 --
 -- Data for Name: film_category; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY film_category (film_id, category_id, last_update) FROM stdin;
-\.
-COPY film_category (film_id, category_id, last_update) FROM '/tmp/2169.dat';
+\COPY film_category (film_id, category_id, last_update) FROM '/tmp/2169.dat';
 
 --
 -- Name: film_film_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1069,9 +1051,7 @@ SELECT pg_catalog.setval('film_film_id_seq', 1000, true);
 -- Data for Name: inventory; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY inventory (inventory_id, film_id, store_id, last_update) FROM stdin;
-\.
-COPY inventory (inventory_id, film_id, store_id, last_update) FROM '/tmp/2179.dat';
+\COPY inventory (inventory_id, film_id, store_id, last_update) FROM '/tmp/2179.dat';
 
 --
 -- Name: inventory_inventory_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1084,9 +1064,7 @@ SELECT pg_catalog.setval('inventory_inventory_id_seq', 4581, true);
 -- Data for Name: language; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY language (language_id, name, last_update) FROM stdin;
-\.
-COPY language (language_id, name, last_update) FROM '/tmp/2181.dat';
+\COPY language (language_id, name, last_update) FROM '/tmp/2181.dat';
 
 --
 -- Name: language_language_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1099,9 +1077,7 @@ SELECT pg_catalog.setval('language_language_id_seq', 6, true);
 -- Data for Name: payment; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY payment (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
-\.
-COPY payment (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM '/tmp/2183.dat';
+\COPY payment (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM '/tmp/2183.dat';
 
 --
 -- Name: payment_payment_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1114,9 +1090,7 @@ SELECT pg_catalog.setval('payment_payment_id_seq', 32098, true);
 -- Data for Name: rental; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY rental (rental_id, rental_date, inventory_id, customer_id, return_date, staff_id, last_update) FROM stdin;
-\.
-COPY rental (rental_id, rental_date, inventory_id, customer_id, return_date, staff_id, last_update) FROM '/tmp/2185.dat';
+\COPY rental (rental_id, rental_date, inventory_id, customer_id, return_date, staff_id, last_update) FROM '/tmp/2185.dat';
 
 --
 -- Name: rental_rental_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1129,9 +1103,7 @@ SELECT pg_catalog.setval('rental_rental_id_seq', 16049, true);
 -- Data for Name: staff; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY staff (staff_id, first_name, last_name, address_id, email, store_id, active, username, password, last_update, picture) FROM stdin;
-\.
-COPY staff (staff_id, first_name, last_name, address_id, email, store_id, active, username, password, last_update, picture) FROM '/tmp/2187.dat';
+\COPY staff (staff_id, first_name, last_name, address_id, email, store_id, active, username, password, last_update, picture) FROM '/tmp/2187.dat';
 
 --
 -- Name: staff_staff_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres
@@ -1144,9 +1116,7 @@ SELECT pg_catalog.setval('staff_staff_id_seq', 2, true);
 -- Data for Name: store; Type: TABLE DATA; Schema: myschema; Owner: postgres
 --
 
-COPY store (store_id, manager_staff_id, address_id, last_update) FROM stdin;
-\.
-COPY store (store_id, manager_staff_id, address_id, last_update) FROM '/tmp/2189.dat';
+\COPY store (store_id, manager_staff_id, address_id, last_update) FROM '/tmp/2189.dat';
 
 --
 -- Name: store_store_id_seq; Type: SEQUENCE SET; Schema: myschema; Owner: postgres

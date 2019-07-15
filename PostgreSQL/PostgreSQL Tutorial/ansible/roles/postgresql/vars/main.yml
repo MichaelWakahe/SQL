@@ -10,8 +10,6 @@ postgresql_ext_postgis_deps:
 postgresql_ext_install_postgis: yes
 postgresql_ext_postgis_version: "2.5"
 
-#postgresql_admin_password: mypass
-
 postgresql_users:
   - name: baz
     pass: pass
