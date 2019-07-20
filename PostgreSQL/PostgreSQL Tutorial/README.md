@@ -110,6 +110,10 @@ Pushing it to Docker Hub:
     docker push mwakahe/postgres-tutorial
 
 
+## About the Sample Database
+You can view the DVD Rental ER Model [here](http://www.postgresqltutorial.com/postgresql-sample-database)
+
+
 ### Break down into end to end tests
 
 Explain what these tests test and why
