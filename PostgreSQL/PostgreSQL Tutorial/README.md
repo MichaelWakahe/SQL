@@ -1,19 +1,33 @@
 # Project Title
 
-These are SQL samples tested on PostgreSQL 11.4. They are derived from [PostgreSQL Tutorial](http://www.postgresqltutorial.com)
+These are SQL samples tested on PostgreSQL 11.4. They are derived from 
+[PostgreSQL Tutorial](http://www.postgresqltutorial.com)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing 
+purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
 Ensure that you have the following installed on your local machine:
-* [Docker](https://www.docker.com)
-* [Ansible](https://www.ansible.com) preferably > v2.5
+* [Docker](https://docs.docker.com/get-docker)
+* [Docker Compose](https://docs.docker.com/compose/install) 
+* PosgreSQL Client (psql)
 
+The instructions below assume you are running them on *nix.
 
 ### Installing
+To build the image: `docker build . -t postgretutorial:v1`
+
+To start the container: `docker run -it --name postgretut_container postgretutorial:v1 /bin/bash`
+
+docker run -it --name some-postgretut_container -e POSTGRES_PASSWORD=secret -d postgres
+docker run -it --name some-postgretut_container -e POSTGRES_PASSWORD=secret postgretutorial:v1 /bin/bash
+
+To remove the image: 
+* first remove the container that is using it: `docker rm postgretut_container`
+* then remove the image: `docker rmi postgretutorial:v1`
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -84,7 +98,8 @@ PostgreSQL Tutorial.
 
 Example to load up the sample database in *nix:
 
-Unpack the contents of dvdrental/dat.zip into /tmp. The files here are referred to in restore.sql; you can edit this SQL file with the relative location of the .dat files.
+Unpack the contents of dvdrental/dat.zip into /tmp. The files here are referred to in restore.sql; you can edit this SQL
+file with the relative location of the .dat files.
 
 ```
 psql -h HOST -d YOUR_DATABASE_NAME -U USERNAME -W < file.sql
