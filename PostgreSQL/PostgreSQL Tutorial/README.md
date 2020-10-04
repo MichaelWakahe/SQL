@@ -1,6 +1,6 @@
-# Project Title
+# PostgreSQL Tutorial
 
-These are SQL samples tested on PostgreSQL 11.4. They are derived from 
+These are SQL samples tested on PostgreSQL 12. They are derived from 
 [PostgreSQL Tutorial](http://www.postgresqltutorial.com)
 
 ## Getting Started
@@ -18,6 +18,8 @@ Ensure that you have the following installed on your local machine:
 The instructions below assume you are running them on *nix.
 
 ### Installing
+docker-compose -f docker-compose.yml up
+
 To build the image: `docker build . -t postgretutorial:v1`
 
 To start the container: `docker run -it --name postgretut_container postgretutorial:v1 /bin/bash`
@@ -107,7 +109,7 @@ psql -h HOST -d YOUR_DATABASE_NAME -U USERNAME -W < file.sql
 
 For example
 ```
-psql -h 172.18.0.2 -d sampledb -U baz -W < restore.sql
+psql -h 172.18.0.2 -d sampledb -U foo -W < restore.sql
 ```
 
 The changes to the restore.sql before it works:
