@@ -6,7 +6,7 @@ These are SQL samples tested on PostgreSQL 12. They are derived from
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing 
-purposes. See deployment for notes on how to deploy the project on a live system.
+purposes. 
 
 ### Prerequisites
 
@@ -17,8 +17,13 @@ Ensure that you have the following installed on your local machine:
 
 The instructions below assume you are running them on *nix.
 
-### Installing
-docker-compose -f docker-compose.yml up
+### Running
+Get the database up and running with `docker-compose -f docker-compose.yml up`
+
+To load the sample database into the engine, run the bash script `DVD_Rental_Dataset/restore.sh`
+
+http://localhost:8080/
+
 
 To build the image: `docker build . -t postgretutorial:v1`
 
@@ -46,85 +51,6 @@ until finished
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
-
-## Docker Image Creation
-
-The custom docker image used in this project is based off of the [Postgres Docker image](https://hub.docker.com/_/postgres)
-
-Setting up the container:
-
-	docker pull postgres:11.4
-	docker network create --subnet=172.18.0.0/16 mynet123
-	docker run --name postgres_container -e POSTGRES_PASSWORD=mypass -d --net mynet123 --ip 172.18.0.2 postgres:11.4
-
-Note that the docker (Linux) bridge network is not reachable from a mac OS host - see [documentation](https://docs.docker.com/docker-for-mac/networking).
-
-
-Get to the console of the container:
-
-	docker exec -it postgres_container /bin/bash
-
-Starting up the container, in case you had previously stopped or paused it:
-
-	docker start postgres_container
-
-After you attach yourself to the container's terminal for the 1st time:
-
-	apt-get update
-	apt-get install vim openssh-client openssh-server python sudo -y
-	(optional) apt-get install iputils-ping net-tools -y
-	/etc/init.d/ssh start
-
-Create another user apart from root to allow for SSH login (the machine doesn't allow root to ssh in); set the new user password to 'foobar' (or whatever is in the	playbook file 'site.yml')
-
-    adduser michael
-	usermod -aG sudo michael
-
-
-Copy the host machine public key 'id_rsa.pub' to the ssh file '~/.ssh/authorized_keys' in the container.
-
-You can then log in passwordlessly from the host using the IP address above. Port 5432 for Postgres is also available using this IP.
-
-Modify your host Ansible settings as follows: add these lines to /etc/ansible/ansible.cfg:
-
-    allow_world_readable_tmpfiles = True
-    pipelining = True
-
-Run the Ansible playbook against the Docker container:
-
-    cd ansible
-    ansible-playbook --inventory hosts site.yml
-
-You need to load up the [sample database](http://www.postgresqltutorial.com/postgresql-sample-database) offered in
-PostgreSQL Tutorial.
-
-Example to load up the sample database in *nix:
-
-Unpack the contents of dvdrental/dat.zip into /tmp. The files here are referred to in restore.sql; you can edit this SQL
-file with the relative location of the .dat files.
-
-```
-psql -h HOST -d YOUR_DATABASE_NAME -U USERNAME -W < file.sql
-```
-
-For example
-```
-psql -h 172.18.0.2 -d sampledb -U foo -W < restore.sql
-```
-
-The changes to the restore.sql before it works:
-* put absolute paths for all the .dat files
-* change `DROP SCHEMA public` to `DROP SCHEMA public CASCADE`
-
-
-Saving the container into an image:
-
-     docker commit postgres_container mwakahe/postgres-tutorial
-
-Pushing it to Docker Hub:
-
-    docker login
-    docker push mwakahe/postgres-tutorial
 
 
 ## About the Sample Database

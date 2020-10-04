@@ -6,6 +6,7 @@ services:
 
   db:
     image: postgres:12
+    container_name: postgrestutorial
     restart: always
     environment:
       POSTGRES_PASSWORD: example
@@ -14,6 +15,7 @@ services:
 
   adminer:
     image: adminer
+    container_name: adminer
     restart: always
     ports:
       - 8080:8080
