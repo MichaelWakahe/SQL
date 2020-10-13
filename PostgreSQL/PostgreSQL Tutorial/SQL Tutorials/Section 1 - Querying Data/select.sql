@@ -33,5 +33,5 @@ FROM
    myschema.customer;
 
 
--- Using SELECT statement with  only expressions example
+-- Using SELECT statement with only expressions example
 SELECT 5 * 3 AS result;
