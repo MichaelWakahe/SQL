@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This sets up the database in the container fired up by docker-compose.
+
 set -eux
 set -o pipefail
 
@@ -14,13 +16,7 @@ db_name='classicmodels'
 MYSQL_PWD=$root_pass mysql --user=root --host=127.0.0.1 -e "DROP DATABASE IF EXISTS $db_name;"
 MYSQL_PWD=$root_pass mysql --user=root --host=127.0.0.1 -e "DROP ROLE IF EXISTS $db_user;"
 
+MYSQL_PWD=$root_pass mysql --user=root --host=127.0.0.1 -e "CREATE USER '$db_user' IDENTIFIED BY '$db_pass';"
+MYSQL_PWD=$root_pass mysql --user=root --host=127.0.0.1 -e "GRANT ALL ON $db_name.* TO '$db_user';"
 
-
-
-
-#PGPASSWORD=example psql --username=postgres --no-password --host=localhost -c "CREATE DATABASE $db_name;"
-#PGPASSWORD=example psql --username=postgres --no-password --host=localhost -c "CREATE USER $db_user WITH ENCRYPTED PASSWORD '$db_pass';"
-#PGPASSWORD=example psql --username=postgres --no-password --host=localhost -c "GRANT ALL PRIVILEGES ON DATABASE $db_name TO $db_user;"
-#
-## Restore a dump of the database
-#PGPASSWORD=$db_pass psql --host=localhost --dbname=$db_name --username=$db_user -w < $db_name.pgdump
+MYSQL_PWD=$db_pass mysql --user=$db_user --host=127.0.0.1 < mysqlsampledatabase.sql
