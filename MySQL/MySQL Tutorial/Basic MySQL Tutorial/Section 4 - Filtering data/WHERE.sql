@@ -1,0 +1,2 @@
+-- Section 4. Filtering data
+-- MySQL WHERE
