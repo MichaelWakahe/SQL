@@ -8,7 +8,7 @@ SELECT
    title,
    release_year
 FROM
-   film
+   myschema.film
 ORDER BY
    film_id
 LIMIT 5;
@@ -20,7 +20,7 @@ SELECT
    title,
    release_year
 FROM
-   film
+   myschema.film
 ORDER BY
    film_id
 LIMIT 4 OFFSET 3;

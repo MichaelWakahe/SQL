@@ -34,7 +34,19 @@ ORDER BY
     last_name DESC;
 
 
--- When you sort rows that contains NULL, you can specify the order of NULL with other non-null values by using the NULLS FIRST or NULLS LAST option of the ORDER BY clause:
+-- The LENGTH() function accepts a string and returns the length of that string.
+-- The following statement selects the first names and their lengths. It sorts the rows by the lengths of the first names:
+SELECT
+	first_name,
+	LENGTH(first_name) len
+FROM
+	myschema.customer
+ORDER BY
+	len DESC;
+
+
+-- When you sort rows that contains NULL, you can specify the order of NULL with other non-null values by using the
+-- NULLS FIRST or NULLS LAST option of the ORDER BY clause:
 
 -- create a new table
 CREATE TABLE sort_demo(

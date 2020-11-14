@@ -7,7 +7,7 @@ SELECT
    last_name,
    first_name
 FROM
-   customer
+   myschema.customer
 WHERE
    first_name = 'Jamie';
 
@@ -17,10 +17,10 @@ SELECT
    last_name,
    first_name
 FROM
-   customer
+   myschema.customer
 WHERE
-   first_name = 'Jamie'
-AND last_name = 'Rice';
+   first_name = 'Jamie' AND
+   last_name = 'Rice';
 
 
 -- Using WHERE clause with the OR operator example
@@ -28,7 +28,7 @@ SELECT
    first_name,
    last_name
 FROM
-   customer
+   myschema.customer
 WHERE
    last_name = 'Rodriguez' OR
    first_name = 'Adam';
@@ -39,7 +39,7 @@ SELECT
    first_name,
    last_name
 FROM
-   customer
+   myschema.customer
 WHERE
    first_name IN ('Ann','Anne','Annie');
 
@@ -49,7 +49,7 @@ SELECT
    first_name,
    last_name
 FROM
-   customer
+   myschema.customer
 WHERE
    first_name LIKE 'Ann%'
 
@@ -59,7 +59,7 @@ SELECT
    first_name,
    LENGTH(first_name) name_length
 FROM
-   customer
+   myschema.customer
 WHERE
    first_name LIKE 'A%' AND
    LENGTH(first_name) BETWEEN 3 AND 5
