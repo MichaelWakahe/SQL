@@ -1,0 +1,21 @@
+version: '3'
+
+services:  
+  database:
+    image: postgis_in_action
+    container_name: postgis_in_actionc
+    build: .
+    # volumes:
+    #   - ../backend/database/data:/data/db
+    restart: always
+    networks:
+      - db_network  
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+    #command: /app/./docker-entrypoint.sh    
+
+networks:
+  db_network:
+    driver: bridge
