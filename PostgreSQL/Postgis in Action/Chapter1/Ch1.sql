@@ -1,6 +1,5 @@
 -- Run this to create your new database, then create a new connection to this database.
 -- In PostgreSQL you cannot change to use a new database using an existing connection.
-CREATE DATABASE postgis_in_action;
 
 -- Enable PostGIS in the database
 CREATE EXTENSION postgis;
